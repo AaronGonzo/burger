@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <h1>Eat-Da-Burger</h1>
+    <br>
+
+    <h3>Add a Burger!</h3>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="name"></label>
+            <textarea id="newburger" name="burger" placeholder="What's your favorite burger?"></textarea>
+        </div>
+        <button type="submit" id="add-burger">Add Burger</button>
+    </form>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h4><strong>New Burgers</strong></h4>
+        <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+            <button type="button" class="eatburger btn" id="eatbutton" data-id="{{this.id}}"
+                data-newDevoured="{{devour}}"></button>
+            <hr>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-6">
+
+        <h4><strong> Devoured Burgers</strong></h4>
+
+
+        <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+
+</div>

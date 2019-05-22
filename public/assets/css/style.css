@@ -1,0 +1,10 @@
+.jumbotron {
+  background-image: url("/assets/img/krabby-patty.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+body {
+  background-color: burlywood;
+}
